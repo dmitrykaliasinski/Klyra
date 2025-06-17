@@ -1,0 +1,107 @@
+.panel {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    width: 300px;
+    min-width: 300px;
+}
+
+.modeButtons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    button {
+        flex: 1;
+        padding: 0.5rem;
+        border-radius: 6px;
+        border: none;
+        background: #eee;
+        font-weight: 600;
+        cursor: pointer;
+
+    &.active {
+            background: #735cff;
+            color: #fff;
+        }
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+    }
+
+.inputRow {
+        position: relative;
+
+        input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+    .balance {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.75rem;
+            color: #777;
+        }
+    }
+
+.percentButtons {
+        margin-top: 0.5rem;
+        display: flex;
+        gap: 0.5rem;
+        justify-content: space-between;
+
+        button {
+            flex: 1;
+            padding: 0.3rem 0;
+            background: #f1f1f1;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+    }
+
+.actionButton {
+        margin-top: 1rem;
+        padding: 0.6rem;
+        background: #7ed6a4;
+        border: none;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+
+    &:hover {
+            background: #66c791;
+        }
+    }
+}
+
+.infoBox {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #555;
+
+    ul {
+        padding-left: 1rem;
+
+        li {
+            margin-bottom: 0.5rem;
+            list-style: disc;
+        }
+    }
+}

@@ -40,6 +40,7 @@ export default function StrategyOverview({ strikePrice, currentPrice, theme }: S
                             <small>Strike Price</small>
                             <strong>{strikePrice}</strong>
                         </div>
+                        <div className={styles.divider}></div>
                         <div>
                             <small>Current Price</small>
                             <strong>{currentPrice}</strong>

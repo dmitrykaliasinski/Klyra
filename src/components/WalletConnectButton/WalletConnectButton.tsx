@@ -6,7 +6,7 @@ import styles from "./WalletConnectButton.module.scss";
 
 export default function WalletConnectButton() {
     const {address, isConnected} = useAccount();
-    const {connect} = useConnect();
+    const {connect, error} = useConnect();
     const {disconnect} = useDisconnect();
 
     const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -23,6 +23,13 @@ export default function WalletConnectButton() {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
+
+    useEffect(() => {
+        if (error?.message.includes('not found')) {
+            alert('Please install a wallet extension like MetaMask.')
+        }
+    }, [error])
+
     const disconnectWallet = () => {
         disconnect();
         setDropdownOpen(false);
@@ -34,6 +41,10 @@ export default function WalletConnectButton() {
             setDropdownOpen(false)
         }
     };
+
+    const connectWallet = () => {
+        connect({connector: injected()})
+    }
 
     const shortAddress = (addr) =>
         addr ? `${addr.slice(0, 6)}...${addr.slice(-4)}` : "";
@@ -50,7 +61,7 @@ export default function WalletConnectButton() {
                     <span style={{fontSize: 10}}>▾</span>
                 </button>
             ) : (
-                <button onClick={() => connect({connector: injected()})} className={styles.connectButton}>
+                <button onClick={connectWallet} className={styles.connectButton}>
                     Connect Wallet
                 </button>
             )}

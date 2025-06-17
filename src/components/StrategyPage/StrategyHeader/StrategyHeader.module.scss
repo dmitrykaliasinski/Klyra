@@ -1,6 +1,7 @@
 .header {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: 1.5rem;
   border-radius: 12px;
   color: white;
@@ -47,6 +48,7 @@
     .metrics {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
       gap: 2rem;
       margin-top: 1rem;
 

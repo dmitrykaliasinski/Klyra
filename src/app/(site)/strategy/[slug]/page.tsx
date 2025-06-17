@@ -1,7 +1,7 @@
-import Link from "next/link";
 import StrategyHeader from "@/components/StrategyPage/StrategyHeader/StrategyHeader";
 import {BackButton} from "@/components/Shared/BackButton";
 import StrategyOverview from "@/components/StrategyPage/StrategyOverview/StrategyOverview";
+import DepositPanel from "@/components/StrategyPage/DepositPanel/DepositPannel";
 
 const data = {
     "bullish": {
@@ -53,10 +53,13 @@ export default async function Page({
 
     return (
         <>
-            <BackButton url={'/'} />
+            <BackButton url={'/'}/>
             <div style={{paddingTop: '2rem'}}>
                 <StrategyHeader {...strategy.header}/>
-                <StrategyOverview strikePrice={'0000'} currentPrice={'000'} theme={strategy.header.theme} />
+                <div style={{display: 'flex', gap: '20px'}}>
+                    <StrategyOverview strikePrice={'0000'} currentPrice={'000'} theme={strategy.header.theme}/>
+                    <DepositPanel/>
+                </div>
             </div>
         </>
     )

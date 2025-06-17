@@ -5,6 +5,8 @@ import Link from 'next/link'
 import WalletConnectButton from "@/components/WalletConnectButton/WalletConnectButton";
 import {usePathname} from "next/navigation";
 import styles from './Header.module.scss'
+import {useConnect} from "wagmi";
+import WrongNetworkMessage from "@/components/WrongNetworkMessage/WrongNetworkMessage";
 
 export default function Header() {
     const pathname = usePathname()
@@ -17,32 +19,35 @@ export default function Header() {
     ]
 
     return (
-        <header className={styles.header}>
-            <Link href='/' className={styles.logoBlock}>
-                <div className={styles.logoCircle}>K</div>
-                <h1 className={styles.logoText}>Klyra</h1>
-            </Link>
-            <nav className={`${styles.nav} ${menuOpen ? styles.open : ''}`}>
-                {navLinks.map(({ href, label }) => (
-                    <Link
-                        key={href}
-                        href={href}
-                        className={pathname === href ? styles.activeLink : ''}
-                        onClick={() => setMenuOpen(false)}
+        <>
+            <header className={styles.header}>
+                <Link href='/' className={styles.logoBlock}>
+                    <div className={styles.logoCircle}>K</div>
+                    <h1 className={styles.logoText}>Klyra</h1>
+                </Link>
+                <nav className={`${styles.nav} ${menuOpen ? styles.open : ''}`}>
+                    {navLinks.map(({ href, label }) => (
+                        <Link
+                            key={href}
+                            href={href}
+                            className={pathname === href ? styles.activeLink : ''}
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            {label}
+                        </Link>
+                    ))}
+                </nav>
+                <div className={styles.rightBlock}>
+                    <WalletConnectButton/>
+                    <button
+                        className={styles.burger}
+                        onClick={() => setMenuOpen(!menuOpen)}
                     >
-                        {label}
-                    </Link>
-                ))}
-            </nav>
-            <div className={styles.rightBlock}>
-                <WalletConnectButton/>
-                <button
-                    className={styles.burger}
-                    onClick={() => setMenuOpen(!menuOpen)}
-                >
-                    {menuOpen ? 'X' : '☰'}
-                </button>
-            </div>
-        </header>
+                        {menuOpen ? 'X' : '☰'}
+                    </button>
+                </div>
+            </header>
+            <WrongNetworkMessage />
+        </>
     )
 }
