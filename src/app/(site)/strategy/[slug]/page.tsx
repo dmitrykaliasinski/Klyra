@@ -2,6 +2,7 @@ import StrategyHeader from "@/components/StrategyPage/StrategyHeader/StrategyHea
 import {BackButton} from "@/components/Shared/BackButton";
 import StrategyOverview from "@/components/StrategyPage/StrategyOverview/StrategyOverview";
 import DepositPanel from "@/components/StrategyPage/DepositPanel/DepositPannel";
+import {VaultType} from "@/components/MainPage/VaultCard/VaultCard";
 
 const data = {
     "bullish": {
@@ -45,11 +46,12 @@ const data = {
 export default async function Page({
                                        params,
                                    }: {
-    params: Promise<{ slug: string }>
+    params: Promise<{ slug: VaultType }>
 }) {
-    const {slug} = await params;
 
-    const strategy = data[slug];
+    const {slug}  = await params;
+
+    const strategy = data[slug] ;
 
     return (
         <>

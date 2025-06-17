@@ -1,5 +1,4 @@
 import styles from './StrategyHeader.module.scss'
-import {VaultType} from "@/components/MainPage/VaultCard/VaultCard";
 import {PiChartLineDown, PiChartLineUp} from "react-icons/pi";
 import {RiArrowUpDownFill} from "react-icons/ri";
 import React from "react";
@@ -12,7 +11,7 @@ interface StrategyHeaderProps {
     expiry: string
     depositAmount: string
     depositValue: string
-    theme?: VaultType
+    theme: string
 }
 
 export default function StrategyHeader({

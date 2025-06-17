@@ -5,7 +5,6 @@ import Link from 'next/link'
 import WalletConnectButton from "@/components/WalletConnectButton/WalletConnectButton";
 import {usePathname} from "next/navigation";
 import styles from './Header.module.scss'
-import {useConnect} from "wagmi";
 import WrongNetworkMessage from "@/components/WrongNetworkMessage/WrongNetworkMessage";
 
 export default function Header() {
