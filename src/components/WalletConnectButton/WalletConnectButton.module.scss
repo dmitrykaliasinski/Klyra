@@ -1,0 +1,68 @@
+.walletContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.connectButton {
+  border-radius: 9999px;
+  padding: 6px 12px;
+  background: linear-gradient(to right, #6366f1, #a855f7);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+}
+
+.connectedButton {
+  border: 2px solid #ef4444;
+  border-radius: 9999px;
+  padding: 6px 12px;
+  color: #ef4444;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ef4444;
+}
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: 110%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  z-index: 1000;
+}
+
+.dropdownItem {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  padding: 10px 16px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+}
+
+.dropdownItemLink {
+  display: flex;
+  gap: 15px;
+  text-decoration: none;
+  color: #333;
+  padding: 10px 16px;
+  font-size: 14px;
+}

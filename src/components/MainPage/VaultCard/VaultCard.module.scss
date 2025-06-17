@@ -1,0 +1,110 @@
+.vaultCard {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.vaultTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.valute {
+  align-self: center;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px;
+}
+
+.iconTitleContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bullishTitle {
+  display: flex;
+  justify-content: space-between;
+  color: #10b981;
+}
+
+.bearishTitle {
+  display: flex;
+  justify-content: space-between;
+  color: #ef4444;
+}
+
+.rangeBoundTitle {
+  display: flex;
+  justify-content: space-between;
+  color: #8b5cf6;
+}
+
+.vaultDescription {
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+.divider {
+  height: 1px;
+  background: #eee;
+  margin: 1rem 0;
+}
+
+.vaultStats {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cycle {
+  .statLabel {
+    align-self: end;
+  }
+  .statValue {
+    align-self: end;
+  }
+}
+
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.statLabel {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.statValue {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.detailsButton {
+  text-decoration: none;
+  width: 100%;
+  padding: 0.75rem;
+  background: inherit;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #e9ecef;
+  }
+}

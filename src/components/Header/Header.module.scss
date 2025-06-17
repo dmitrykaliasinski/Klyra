@@ -1,0 +1,100 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2rem 2rem;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.logoBlock {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logoCircle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7b3fe4, #a855f7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.logoText {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: 600;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  font-size: 14px;
+
+  .activeLink {
+    color: black;
+  }
+
+  a {
+    color: oklch(44.6% .03 256.802);
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      color: black;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    z-index: 999;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &.open {
+    max-height: 500px; // или достаточно для 3-х пунктов
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.rightBlock {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.burger {
+  display: none;
+  color: gray;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}

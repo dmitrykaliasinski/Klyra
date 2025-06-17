@@ -1,0 +1,17 @@
+.main {
+  text-decoration: none;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 1rem;
+    color: grey;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  :hover {
+    color: #333333;
+  }
+}
